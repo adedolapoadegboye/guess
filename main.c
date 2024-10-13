@@ -34,7 +34,6 @@ int main(void)
         // Generating a random number between MIN_NUMBER and MAX_NUMBER
         srand((unsigned)time(&t));                                             // Initialize random number generator
         random_number = (rand() % (MAX_NUMBER - MIN_NUMBER + 1)) + MIN_NUMBER; // Generate a random number between MIN_NUMBER and MAX_NUMBER
-        printf("Hint: The number is %d.\n", random_number);
 
         printf("\nHello, %s. I am thinking of a number between 1 and 10. You have %d attempts to guess it.\n", name, MAX_ATTEMPTS);
 
@@ -58,7 +57,7 @@ int main(void)
             }
             else
             {
-                printf("\nCongratulations, %s. You guessed it in %d attempts.\n", name, attempts);
+                printf("\nCongratulations, %s. You guessed it in %d attempt%s.\n", name, attempts, attempts > 1 ? "s" : "");
                 break;
             }
         }
